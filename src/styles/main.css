@@ -81,23 +81,37 @@ a:focus-visible, button:focus-visible {
   height: 4.25rem;
 }
 
-.lab-identifier {
+.lab-brand-group {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 1.15rem;
 }
 
-.lab-identifier .lab-title {
-  font-family: var(--font-body);
-  font-size: 0.8125rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-header);
-  font-weight: 600;
+.brand-logo {
+  display: block;
+  object-fit: contain;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.lab-identifier .institution-title {
-  font-size: 0.75rem;
-  color: var(--color-caption);
+.brand-logo:hover {
+  opacity: 0.85;
+}
+
+.logo-homecell {
+  height: 38px;
+  width: auto;
+  max-width: 175px;
+}
+
+.logo-iitgn {
+  height: 44px;
+  width: auto;
+}
+
+.brand-divider {
+  width: 1px;
+  height: 28px;
+  background: var(--color-border-delicate);
 }
 
 .site-nav ul {
