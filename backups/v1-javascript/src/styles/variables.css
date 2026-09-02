@@ -1,0 +1,53 @@
+:root {
+  /* Surface & Canvas Colors */
+  --color-bg: #FAF8F5;
+  --color-bg-subtle: #F5F1EB;
+  --color-bg-card: rgba(253, 251, 247, 0.85);
+  --color-border: #495326;
+  --color-border-light: rgba(73, 83, 38, 0.18);
+  --color-border-delicate: rgba(73, 83, 38, 0.08);
+
+  /* Editorial & Text Typography Colors */
+  --color-header: #495326;
+  --color-body: #2B2F1F;
+  --color-subtitle: #76745A;
+  --color-caption: #8C8D8F;
+  --color-annotation: #596135;
+
+  /* Scientific Semantic Colors (Strictly prescribed) */
+  --color-non-cancer: #3E85AB;
+  --color-non-cancer-tint: rgba(62, 133, 171, 0.14);
+  --color-non-cancer-wash: rgba(62, 133, 171, 0.22);
+  
+  --color-cancer: #F18D8D;
+  --color-cancer-tint: rgba(241, 141, 141, 0.16);
+  --color-cancer-wash: rgba(241, 141, 141, 0.25);
+
+  --color-higher-entity: #F1A021;
+  --color-higher-entity-tint: rgba(241, 160, 33, 0.18);
+
+  --color-lower-entity: #8C8D8F;
+  --color-lower-entity-tint: rgba(140, 141, 143, 0.18);
+
+  /* Typography Stacks */
+  --font-display: "Didot", "Didot LT STD", "GFS Didot", "Bodoni MT", "Cinzel", Georgia, serif;
+  --font-body: "Georgia", "Cambria", "Times New Roman", Times, serif;
+  --font-mono: "SF Mono", "Courier New", Courier, monospace;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3.5rem;
+  --spacing-2xl: 5rem;
+  --spacing-3xl: 7.5rem;
+
+  /* Transitions */
+  --transition-gentle: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-snappy: all 0.2s ease-out;
+
+  /* Shadows */
+  --shadow-paper: 0 4px 20px -2px rgba(73, 83, 38, 0.05), 0 1px 4px 0 rgba(73, 83, 38, 0.03);
+  --shadow-card-hover: 0 12px 32px -4px rgba(73, 83, 38, 0.10);
+}

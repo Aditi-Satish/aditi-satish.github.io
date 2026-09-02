@@ -1,0 +1,71 @@
+/* Fallback import for GFS Didot to ensure cross-platform fidelity on non-Apple devices */
+@import url('https://fonts.googleapis.com/css2?family=GFS+Didot&display=swap');
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-body);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+  color: var(--color-header);
+  font-weight: normal;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5.5vw, 4.25rem);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  line-height: 1.25;
+}
+
+h3 {
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  line-height: 1.35;
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  color: var(--color-subtitle);
+  font-style: italic;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.caption {
+  font-family: var(--font-body);
+  color: var(--color-caption);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+.field-label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-subtitle);
+  font-weight: 600;
+}
+
+.editorial-quote {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+  line-height: 1.5;
+  color: var(--color-header);
+  border-left: 2px solid var(--color-header);
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  font-style: normal;
+}

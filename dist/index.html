@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aditi Lakshmi Satish — PhD Research Scholar | HoMeCell Lab, IIT Gandhinagar</title>
+  
+  <meta name="description" content="Personal scientific research website of Aditi Lakshmi Satish, PhD Research Scholar at HoMeCell Lab, IIT Gandhinagar. Researching resource optimisation through transcription start site selection and its exploitation in cancers." />
+  <meta name="keywords" content="Aditi Lakshmi Satish, HoMeCell Lab, IIT Gandhinagar, Transcription Start Site, TSS, Cancer Biology, Futile Transcription, Frontiers in Bioinformatics" />
+  <meta name="author" content="Aditi Lakshmi Satish" />
+
+  <!-- OpenGraph / Social Metadata -->
+  <meta property="og:title" content="Aditi Lakshmi Satish — Scientific Research" />
+  <meta property="og:description" content="Resource optimisation through transcription start site selection and its exploitation in cancers." />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  
+  <!-- Main Stylesheet -->
+  <script type="module" crossorigin src="./assets/index-Bmh7etHn.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DmfHpm6l.css">
+</head>
+<body class="paper-texture">
+
+  <!-- SVG Filter Definitions for Organic Watercolor Edge & Bleed -->
+  <svg class="sr-only" aria-hidden="true">
+    <defs>
+      <filter id="watercolor-displacement" x="-20%" y="-20%" width="140%" height="140%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="4" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="5.5" xChannelSelector="R" yChannelSelector="G" result="displaced" />
+        <feGaussianBlur in="displaced" stdDeviation="0.4" result="blurred" />
+        <feMerge>
+          <feMergeNode in="blurred" />
+          <feMergeNode in="SourceGraphic" opacity="0.65" />
+        </feMerge>
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- Ambient Watercolor Background Washes -->
+  <div class="wash-backdrop wash-azure" style="top: 8%; left: -6%; width: 440px; height: 380px;" aria-hidden="true"></div>
+  <div class="wash-backdrop wash-rose" style="top: 28%; right: -8%; width: 500px; height: 420px;" aria-hidden="true"></div>
+  <div class="wash-backdrop wash-amber" style="top: 60%; left: -4%; width: 380px; height: 320px;" aria-hidden="true"></div>
+
+  <!-- Editorial Top Masthead -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <div class="lab-identifier">
+          <span class="lab-title">HoMeCell Lab</span>
+          <span class="institution-title">Indian Institute of Technology Gandhinagar</span>
+        </div>
+        <nav class="site-nav" aria-label="Main Navigation">
+          <ul>
+            <li><a href="#identity">Identity</a></li>
+            <li><a href="#landscape">TSS Landscape</a></li>
+            <li><a href="#featured-work">Featured Work</a></li>
+            <li><a href="#themes">Research Themes</a></li>
+            <li><a href="#connect">Connect</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Section 1: Identity & Core Research Hook -->
+    <section id="identity" class="hero-section">
+      <div class="container">
+        <div class="hero-meta">
+          <div class="specimen-tag">
+            <span class="dot dot-non-cancer"></span>
+            <span>Field Note: Cytological & Genomic Transcription</span>
+          </div>
+        </div>
+
+        <h1 class="hero-name">Aditi Lakshmi Satish</h1>
+        <p class="hero-position">PhD Research Scholar · HoMeCell Lab, IIT Gandhinagar</p>
+
+        <div class="hero-axiom-wrapper">
+          <div class="editorial-quote">
+            “Resource optimisation through transcription start site selection and its exploitation in cancers.”
+          </div>
+        </div>
+
+        <p class="hero-description">
+          I investigate how human cells deploy alternative transcription start sites (TSS) to balance cellular 
+          metabolic investment against transcriptional yield. By interrogating stochastic versus adaptive transcriptional 
+          trajectories, my work uncovers how deregulated start site initiation drives futile transcriptional expenditure in tumors.
+        </p>
+
+        <div class="hero-quick-actions">
+          <a href="#landscape" class="btn-editorial">
+            <span>Explore Genomic Landscape</span>
+            <span aria-hidden="true">↓</span>
+          </a>
+          <a href="#featured-work" class="btn-editorial-subtle">
+            <span>Latest Publication (Frontiers, 2026)</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: The Genomic Landscape (Interactive TSS Visualization) -->
+    <section id="landscape" class="viz-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="field-label section-tag">Interactive Metaphor</span>
+          <h2 class="section-title">The Genomic Landscape</h2>
+          <p class="section-intro">
+            One genomic locus accommodates multiple transcription start sites. Divergent transcriptional 
+            initiations dictate whether cellular energy is conserved or squandered in oncogenic futile cycles.
+          </p>
+        </div>
+
+        <div class="viz-stage">
+          <!-- Visualization Controls & Legend -->
+          <div class="viz-controls-bar">
+            <div class="viz-tabs" role="tablist" aria-label="Visual Scenario Tabs">
+              <button class="viz-tab-btn active" data-mode="all" role="tab" aria-selected="true">All Deployments</button>
+              <button class="viz-tab-btn" data-mode="noncancer" role="tab" aria-selected="false">Adaptive (Non-Cancer)</button>
+              <button class="viz-tab-btn" data-mode="cancer" role="tab" aria-selected="false">Futile (Cancer)</button>
+              <button class="viz-tab-btn" data-mode="energy" role="tab" aria-selected="false">Resource Drain</button>
+            </div>
+
+            <div class="viz-legend-bar" aria-label="Scientific Color Vocabulary">
+              <div class="legend-item">
+                <span class="legend-swatch swatch-noncancer"></span>
+                <span>Non-cancers (#3E85AB)</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-swatch swatch-cancer"></span>
+                <span>Cancers (#F18D8D)</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-swatch-circle swatch-higher"></span>
+                <span>Higher entities (#F1A021)</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-swatch-circle swatch-lower"></span>
+                <span>Lower entities (#8C8D8F)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive SVG Diagram -->
+          <div id="tss-svg-container" class="viz-svg-wrapper">
+            <svg viewBox="0 0 920 380" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="svg-title svg-desc">
+              <title id="svg-title">Alternative Transcription Start Site Trajectories in Non-cancer vs Cancer</title>
+              <desc id="svg-desc">Branching watercolor trajectories flowing from a genomic locus to distinct biological outcomes, illustrating resource consumption.</desc>
+
+              <!-- Genomic Coordinate Baseline -->
+              <g class="genomic-axis">
+                <line x1="60" y1="200" x2="860" y2="200" stroke="#495326" stroke-width="2" stroke-dasharray="2 3" opacity="0.45" />
+                <line x1="60" y1="190" x2="60" y2="210" stroke="#495326" stroke-width="1.5" />
+                <line x1="860" y1="190" x2="860" y2="210" stroke="#495326" stroke-width="1.5" />
+                <text x="60" y="228" fill="#76745A" font-family="Georgia" font-size="11" letter-spacing="0.04em">5' GENOMIC LOCUS</text>
+                <text x="800" y="228" fill="#76745A" font-family="Georgia" font-size="11" letter-spacing="0.04em">3' EXONIC REGION</text>
+              </g>
+
+              <!-- Start Sites / Transcription Inception Ticks -->
+              <g class="tss-promoters">
+                <!-- TSS 1 (Canonical / Upstream) -->
+                <g class="tss-interactive-node" data-tss="tss-1">
+                  <line x1="180" y1="170" x2="180" y2="230" stroke="#495326" stroke-width="2" />
+                  <circle cx="180" cy="200" r="5" fill="#495326" />
+                  <text x="165" y="156" fill="#495326" font-family="Didot, serif" font-size="14" font-weight="bold">TSS 1</text>
+                  <text x="150" y="250" fill="#8C8D8F" font-family="Georgia" font-size="11" font-style="italic">Canonical</text>
+                </g>
+
+                <!-- TSS 2 (Alternative Physiological) -->
+                <g class="tss-interactive-node" data-tss="tss-2">
+                  <line x1="310" y1="175" x2="310" y2="225" stroke="#495326" stroke-width="1.5" />
+                  <circle cx="310" cy="200" r="4.5" fill="#495326" />
+                  <text x="295" y="162" fill="#495326" font-family="Didot, serif" font-size="13">TSS 2</text>
+                  <text x="282" y="246" fill="#8C8D8F" font-family="Georgia" font-size="10.5" font-style="italic">Proximal</text>
+                </g>
+
+                <!-- TSS 3 (Cryptic / Oncogenic) -->
+                <g class="tss-interactive-node" data-tss="tss-3">
+                  <line x1="430" y1="170" x2="430" y2="230" stroke="#495326" stroke-width="2" />
+                  <circle cx="430" cy="200" r="5" fill="#495326" />
+                  <text x="415" y="156" fill="#495326" font-family="Didot, serif" font-size="14" font-weight="bold">TSS 3</text>
+                  <text x="400" y="250" fill="#F18D8D" font-family="Georgia" font-size="11" font-style="italic">Deregulated</text>
+                </g>
+              </g>
+
+              <!-- Branching Translucent Trajectories (Watercolor Washes) -->
+              <!-- Group 1: Non-Cancer / Adaptive Trajectories (#3E85AB) -->
+              <g class="trajectories-noncancer" filter="url(#watercolor-displacement)" style="mix-blend-mode: multiply;">
+                <!-- Primary Adaptive Path from TSS 1 -->
+                <path class="path-noncancer" d="M180 200 C 260 200, 360 85, 540 85 C 670 85, 740 75, 840 75" 
+                      stroke="#3E85AB" stroke-width="4.5" stroke-linecap="round" fill="none" opacity="0.75" />
+                <!-- Secondary Adaptive Path from TSS 2 -->
+                <path class="path-noncancer" d="M310 200 C 400 200, 480 125, 620 125 C 720 125, 770 115, 840 115" 
+                      stroke="#3E85AB" stroke-width="3.5" stroke-linecap="round" fill="none" opacity="0.65" />
+              </g>
+
+              <!-- Group 2: Cancer / Futile Trajectories (#F18D8D) -->
+              <g class="trajectories-cancer" filter="url(#watercolor-displacement)" style="mix-blend-mode: multiply;">
+                <!-- Stochastic Divergence 1 from TSS 3 -->
+                <path class="path-cancer" d="M430 200 C 500 200, 560 280, 680 280 C 760 280, 800 295, 840 295" 
+                      stroke="#F18D8D" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.75" />
+                <!-- Futile Secondary Branching from TSS 3 -->
+                <path class="path-cancer" d="M430 200 C 510 200, 570 330, 690 330 C 770 330, 800 340, 840 340" 
+                      stroke="#F18D8D" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.65" />
+                <!-- Intermediate Stochastic Cross-drift -->
+                <path class="path-cancer" d="M310 200 C 440 200, 500 250, 640 250 C 730 250, 780 260, 840 260" 
+                      stroke="#F18D8D" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 4" fill="none" opacity="0.5" />
+              </g>
+
+              <!-- Higher Entities (#F1A021) & Lower Entities (#8C8D8F) Nodes -->
+              <g class="entity-nodes">
+                <!-- Higher Entity Nodes (Adaptive High-Affinity / Essential Functions) -->
+                <g class="node-higher">
+                  <circle cx="840" cy="75" r="7" fill="#F1A021" />
+                  <circle cx="840" cy="75" r="14" stroke="#F1A021" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.6" />
+                  <text x="858" y="79" fill="#495326" font-family="Georgia" font-size="12" font-weight="600">Adaptive Product (Higher Entity)</text>
+                </g>
+
+                <g class="node-higher">
+                  <circle cx="840" cy="115" r="5" fill="#F1A021" opacity="0.85" />
+                  <text x="858" y="119" fill="#76745A" font-family="Georgia" font-size="11">Constitutive Transcript</text>
+                </g>
+
+                <!-- Lower Entity Nodes (Futile / Deregulated Oncogenic Byproducts) -->
+                <g class="node-lower">
+                  <circle cx="840" cy="260" r="4.5" fill="#8C8D8F" />
+                  <text x="858" y="264" fill="#8C8D8F" font-family="Georgia" font-size="11">Stochastic Aberrant Isoform</text>
+                </g>
+
+                <g class="node-lower">
+                  <circle cx="840" cy="295" r="6" fill="#8C8D8F" />
+                  <circle cx="840" cy="295" r="12" stroke="#8C8D8F" stroke-width="1" stroke-dasharray="2 2" opacity="0.5" />
+                  <text x="858" y="299" fill="#F18D8D" font-family="Georgia" font-size="12" font-weight="600">Futile Transcription Drain</text>
+                </g>
+
+                <g class="node-lower">
+                  <circle cx="840" cy="340" r="4" fill="#8C8D8F" opacity="0.7" />
+                  <text x="858" y="344" fill="#8C8D8F" font-family="Georgia" font-size="11">Truncated Non-functional Product</text>
+                </g>
+              </g>
+            </svg>
+          </div>
+
+          <!-- Dynamic Annotation / Specimen Callout Card -->
+          <div class="viz-callout-card" id="viz-callout">
+            <div class="callout-content">
+              <h4 id="callout-title">Genomic Locus & Alternative TSS Deployments</h4>
+              <p id="callout-desc">
+                A single genomic region contains multiple alternative transcription start sites. Depending on cellular state,
+                alternative initiation redirects RNA polymerase II down distinct pathways, dictating energetic consumption.
+              </p>
+            </div>
+            <div class="callout-metrics">
+              <div class="metric-item">
+                <span class="metric-label">Resource Cost</span>
+                <span class="metric-value" id="callout-energy">Equilibrium</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-label">Biological Fate</span>
+                <span class="metric-value" id="callout-fate">Balanced</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Featured Publication -->
+    <section id="featured-work" class="featured-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="field-label section-tag">Recent Accepted Work</span>
+          <h2 class="section-title">Featured Publication</h2>
+        </div>
+
+        <article class="publication-card">
+          <div class="pub-status-badge">Accepted Paper · 2026</div>
+
+          <h3 class="pub-title">
+            Gene functions determine stochastic or adaptive futile transcription in cancers through deregulated start site deployments
+          </h3>
+
+          <div class="pub-meta">
+            <div class="pub-meta-item">
+              <strong>Journal:</strong> <em>Frontiers in Bioinformatics</em>
+            </div>
+            <div class="pub-meta-item">
+              <strong>DOI:</strong> 
+              <a href="https://doi.org/10.3389/fbinf.2026.1883461" target="_blank" rel="noopener noreferrer">10.3389/fbinf.2026.1883461 ↗</a>
+            </div>
+            <div class="pub-meta-item">
+              <strong>Author:</strong> Aditi Lakshmi Satish et al.
+            </div>
+          </div>
+
+          <p class="pub-abstract">
+            While transcription start site (TSS) selection governs transcriptional fidelity in eukaryotes, malignant cells frequently
+            exhibit profound deregulation in initiation site architecture. This study establishes that intrinsic gene functional classifications
+            modulate whether initiation shifts represent stochastic transcriptional noise or adaptive metabolic survival strategies. By quantifying
+            the thermodynamic and molecular penalties of futile transcription, we elucidate how deregulated TSS usage shapes cancer cell plasticity.
+          </p>
+
+          <div class="pub-actions">
+            <a href="https://www.frontiersin.org/journals/bioinformatics/articles/10.3389/fbinf.2026.1883461/abstract" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="btn-editorial">
+              <span>Read Abstract on Frontiers ↗</span>
+            </a>
+            <button id="copy-citation-btn" class="btn-editorial" style="background: rgba(73, 83, 38, 0.05);">
+              <span>Copy Citation</span>
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Section 4: Deeper Research Themes -->
+    <section id="themes" class="themes-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="field-label section-tag">Core Inquiries</span>
+          <h2 class="section-title">Research Architecture</h2>
+          <p class="section-intro">
+            Three foundational inquiries guiding computational and molecular analysis at the intersection of transcription energetics and oncogenesis.
+          </p>
+        </div>
+
+        <div class="themes-grid">
+          <div class="theme-card">
+            <div class="theme-number">01</div>
+            <h3>Resource Optimisation & Energetic Costs</h3>
+            <p>
+              Transcription is one of the most ATP-intensive biosynthetic operations in eukaryotic cells. We quantify the thermodynamic
+              burden of transcription initiation, assessing how alternative TSS usage influences elongation efficiency and nucleotide expenditure.
+            </p>
+          </div>
+
+          <div class="theme-card">
+            <div class="theme-number">02</div>
+            <h3>Stochastic vs. Adaptive Behavior</h3>
+            <p>
+              Differentiating random transcriptional drift from evolutionary adaptation. We analyze whether aberrant start site selections
+              constitute purposeless biochemical overflow (futile cycles) or advantageous phenotypic diversification.
+            </p>
+          </div>
+
+          <div class="theme-card">
+            <div class="theme-number">03</div>
+            <h3>Cancer Exploitation & Start Site Plasticity</h3>
+            <p>
+              Investigating the chromatin landscapes, epigenetic marks, and transcription factor affinities that permit cancer lineages
+              to tolerate—and strategically benefit from—deregulated promoter utilization.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Connect & Academic Colophon -->
+    <section id="connect" class="connect-section">
+      <div class="container">
+        <div class="connect-grid">
+          <div>
+            <span class="field-label section-tag">Communication & Profiles</span>
+            <h2 class="section-title">Connect & Scholar Inquiries</h2>
+            <p class="section-intro" style="margin-bottom: 1.5rem;">
+              For collaborations, conference discussions, or computational inquiries, please connect through Google Scholar or LinkedIn.
+            </p>
+
+            <ul class="connect-links-list">
+              <li class="connect-link-item">
+                <a href="https://scholar.google.com/citations?user=Bfhcpo8AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
+                  <span>Google Scholar Profile</span>
+                  <span class="icon">↗</span>
+                </a>
+              </li>
+              <li class="connect-link-item">
+                <a href="https://www.linkedin.com/in/aditi-lakshmi-satish" target="_blank" rel="noopener noreferrer">
+                  <span>LinkedIn · Aditi Lakshmi Satish</span>
+                  <span class="icon">↗</span>
+                </a>
+              </li>
+              <li class="connect-link-item">
+                <a href="https://www.frontiersin.org/journals/bioinformatics/articles/10.3389/fbinf.2026.1883461/abstract" target="_blank" rel="noopener noreferrer">
+                  <span>Frontiers in Bioinformatics Publication</span>
+                  <span class="icon">↗</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="colophon-note field-bracket">
+            <span class="field-label" style="margin-bottom: 0.75rem; display: block;">Institutional Context</span>
+            <p>
+              <strong>Aditi Lakshmi Satish</strong><br />
+              PhD Research Scholar<br />
+              <strong>HoMeCell Lab</strong><br />
+              Indian Institute of Technology Gandhinagar (IITGN)<br />
+              Palaj, Gandhinagar, Gujarat, India
+            </p>
+            <hr class="notebook-rule" />
+            <p class="caption">
+              Designed as a scientific field notebook combining editorial typography (Didot + Georgia), 
+              procedural watercolor washes, and subtle genomic trajectory interactions. Set for static deployment on GitHub Pages.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
