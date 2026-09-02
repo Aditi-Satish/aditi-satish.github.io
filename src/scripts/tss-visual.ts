@@ -1,7 +1,7 @@
 /**
  * Transcription Start Site (TSS) & Genomic Trajectory Interactive Visualizer
  * HoMeCell Lab - IIT Gandhinagar
- * Visual Metaphor: One genomic locus -> Multiple alternative start sites -> Divergent transcriptional paths -> Resource costs
+ * Visual Metaphor: Genomic Locus -> Multiple TSSs (Distal, Canonical, Proximal) -> Divergent Transcripts -> Resource Costs
  */
 
 export type TSSMode = 'all' | 'noncancer' | 'cancer' | 'energy';
@@ -26,26 +26,26 @@ export function initTSSVisualizer(): void {
   // Scientific scenario data model
   const states: Record<TSSMode, TSSScenario> = {
     all: {
-      title: "Genomic Locus & Alternative TSS Deployments",
-      desc: "A single genomic region contains multiple alternative transcription start sites. Depending on cellular state (physiological vs. oncogenic), alternative initiation redirects RNA polymerase II down distinct metabolic pathways.",
+      title: "Alternative TSS Deployments & Transcriptional Fates",
+      desc: "Alternative start site deployment dictates cellular metabolic expenditure. Non-cancers select canonical (TSS 2) and cell-type specific start sites, whereas cancers suffer from distal dysregulation and heavy futile cycles.",
       energy: "Variable",
       fate: "Equilibrium"
     },
     noncancer: {
       title: "Physiological / Non-Cancer Selection (Adaptive)",
-      desc: "Regulated deployment from canonical start sites (TSS 1 / TSS 2) minimizes futile energy expenditure. Transcription matches cell metabolic budget and produces stable, adaptive gene products.",
+      desc: "Regulated deployment from the canonical site (TSS 2) and cell-type specific site (TSS 3) conserves metabolic currency, producing functional adaptive gene products.",
       energy: "Optimised (Low)",
-      fate: "Adaptive & Productive"
+      fate: "Canonical & Adaptive"
     },
     cancer: {
-      title: "Oncogenic / Cancer Selection (Deregulated)",
-      desc: "Start site deployment is deregulated, triggering unconstrained initiation from downstream/upstream alternative cryptic sites. Substantial cellular resources are consumed in futile, non-productive transcript synthesis.",
+      title: "Oncogenic / Cancer Selection (Dysregulated & Futile)",
+      desc: "Start site deployment is altered: initiation from distal TSS 1 generates dysregulated transcripts and drives heavy, energy-draining futile transcription.",
       energy: "Excessive (High)",
-      fate: "Stochastic & Futile"
+      fate: "Dysregulated & Futile"
     },
     energy: {
-      title: "Metabolic Cost & Energy Budget Exploitation",
-      desc: "Comparative thermodynamic footprint: Cancer cells divert nucleotides and ATP towards futile transcription via deregulated start sites, exploiting cellular resource machinery.",
+      title: "Metabolic Cost & Futile Energy Drain",
+      desc: "Thermodynamic penalty: The heavy water-wash futile trajectory from distal TSS 1 consumes nucleotide pools and ATP without functional biological payoff.",
       energy: "ΔCost +340%",
       fate: "Resource Drain"
     }
@@ -58,32 +58,37 @@ export function initTSSVisualizer(): void {
     if (calloutEnergy) calloutEnergy.textContent = data.energy;
     if (calloutFate) calloutFate.textContent = data.fate;
 
-    const nonCancerPaths = container!.querySelectorAll<SVGPathElement>('.path-noncancer');
-    const cancerPaths = container!.querySelectorAll<SVGPathElement>('.path-cancer');
+    const nonCancerPaths = container!.querySelectorAll<SVGElement>('.path-noncancer');
+    const cancerPaths = container!.querySelectorAll<SVGElement>('.path-cancer');
+    const futilePaths = container!.querySelectorAll<SVGElement>('.path-futile-heavy');
     const higherNodes = container!.querySelectorAll<SVGGElement>('.node-higher');
     const lowerNodes = container!.querySelectorAll<SVGGElement>('.node-lower');
 
     if (mode === 'noncancer') {
-      nonCancerPaths.forEach(p => { p.style.opacity = '1'; p.style.strokeWidth = '6'; });
-      cancerPaths.forEach(p => { p.style.opacity = '0.12'; p.style.strokeWidth = '2'; });
+      nonCancerPaths.forEach(p => { p.style.opacity = '1'; });
+      cancerPaths.forEach(p => { p.style.opacity = '0.12'; });
+      futilePaths.forEach(p => { p.style.opacity = '0.08'; });
       higherNodes.forEach(n => { n.style.opacity = '1'; });
-      lowerNodes.forEach(n => { n.style.opacity = '0.3'; });
+      lowerNodes.forEach(n => { n.style.opacity = '0.25'; });
     } else if (mode === 'cancer') {
-      nonCancerPaths.forEach(p => { p.style.opacity = '0.12'; p.style.strokeWidth = '2'; });
-      cancerPaths.forEach(p => { p.style.opacity = '1'; p.style.strokeWidth = '7'; });
-      higherNodes.forEach(n => { n.style.opacity = '0.4'; });
+      nonCancerPaths.forEach(p => { p.style.opacity = '0.12'; });
+      cancerPaths.forEach(p => { p.style.opacity = '1'; });
+      futilePaths.forEach(p => { p.style.opacity = '1'; });
+      higherNodes.forEach(n => { n.style.opacity = '0.35'; });
       lowerNodes.forEach(n => { n.style.opacity = '1'; });
     } else if (mode === 'energy') {
-      nonCancerPaths.forEach(p => { p.style.opacity = '0.7'; p.style.strokeWidth = '4'; });
-      cancerPaths.forEach(p => { p.style.opacity = '0.9'; p.style.strokeWidth = '8'; });
-      higherNodes.forEach(n => { n.style.opacity = '1'; });
+      nonCancerPaths.forEach(p => { p.style.opacity = '0.55'; });
+      cancerPaths.forEach(p => { p.style.opacity = '0.85'; });
+      futilePaths.forEach(p => { p.style.opacity = '1'; });
+      higherNodes.forEach(n => { n.style.opacity = '0.8'; });
       lowerNodes.forEach(n => { n.style.opacity = '1'; });
     } else {
       // 'all' default state
-      nonCancerPaths.forEach(p => { p.style.opacity = '0.75'; p.style.strokeWidth = '4.5'; });
-      cancerPaths.forEach(p => { p.style.opacity = '0.75'; p.style.strokeWidth = '4.5'; });
-      higherNodes.forEach(n => { n.style.opacity = '0.9'; });
-      lowerNodes.forEach(n => { n.style.opacity = '0.9'; });
+      nonCancerPaths.forEach(p => { p.style.opacity = '0.85'; });
+      cancerPaths.forEach(p => { p.style.opacity = '0.85'; });
+      futilePaths.forEach(p => { p.style.opacity = '0.9'; });
+      higherNodes.forEach(n => { n.style.opacity = '1'; });
+      lowerNodes.forEach(n => { n.style.opacity = '1'; });
     }
   }
 
@@ -106,14 +111,14 @@ export function initTSSVisualizer(): void {
   tssNodes.forEach(node => {
     node.addEventListener('mouseenter', () => {
       node.style.cursor = 'pointer';
-      node.style.transform = 'scale(1.15)';
+      node.style.transform = 'scale(1.12)';
     });
     node.addEventListener('mouseleave', () => {
       node.style.transform = 'scale(1)';
     });
     node.addEventListener('click', () => {
       const site = node.getAttribute('data-tss');
-      const targetMode: TSSMode = site === 'tss-1' ? 'noncancer' : 'cancer';
+      const targetMode: TSSMode = site === 'tss-1' ? 'cancer' : 'noncancer';
       const targetBtn = document.querySelector<HTMLButtonElement>(`.viz-tab-btn[data-mode="${targetMode}"]`);
       if (targetBtn) targetBtn.click();
     });

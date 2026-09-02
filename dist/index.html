@@ -17,8 +17,8 @@
   <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
   
   <!-- Main Stylesheet -->
-  <script type="module" crossorigin src="./assets/index-CL0ns5OA.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-Cor9zUy0.css">
+  <script type="module" crossorigin src="./assets/index-CGWaGfT9.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-ConkY1DC.css">
 </head>
 <body class="paper-texture">
 
@@ -32,6 +32,18 @@
         <feMerge>
           <feMergeNode in="blurred" />
           <feMergeNode in="SourceGraphic" opacity="0.65" />
+        </feMerge>
+      </filter>
+
+      <!-- Enhanced Heavy Water Wash Filter for Futile Transcription -->
+      <filter id="heavy-watercolor-displacement" x="-30%" y="-30%" width="160%" height="160%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.028" numOctaves="4" result="heavyNoise" />
+        <feDisplacementMap in="SourceGraphic" in2="heavyNoise" scale="9.5" xChannelSelector="R" yChannelSelector="G" result="displacedHeavy" />
+        <feGaussianBlur in="displacedHeavy" stdDeviation="1.1" result="blurredHeavy" />
+        <feMerge>
+          <feMergeNode in="blurredHeavy" opacity="0.75" />
+          <feMergeNode in="displacedHeavy" opacity="0.9" />
+          <feMergeNode in="SourceGraphic" opacity="0.45" />
         </feMerge>
       </filter>
     </defs>
@@ -126,118 +138,124 @@
             <div class="viz-legend-bar" aria-label="Scientific Color Vocabulary">
               <div class="legend-item">
                 <span class="legend-swatch swatch-noncancer"></span>
-                <span>Non-cancers (#3E85AB)</span>
+                <span>Non-cancers</span>
               </div>
               <div class="legend-item">
                 <span class="legend-swatch swatch-cancer"></span>
-                <span>Cancers (#F18D8D)</span>
+                <span>Cancers</span>
               </div>
               <div class="legend-item">
                 <span class="legend-swatch-circle swatch-higher"></span>
-                <span>Higher entities (#F1A021)</span>
+                <span>Higher entities</span>
               </div>
               <div class="legend-item">
                 <span class="legend-swatch-circle swatch-lower"></span>
-                <span>Lower entities (#8C8D8F)</span>
+                <span>Lower entities</span>
               </div>
             </div>
           </div>
 
-          <!-- Interactive SVG Diagram -->
+          <!-- Interactive SVG Diagram (Extended 1160px coordinate canvas to prevent clipping) -->
           <div id="tss-svg-container" class="viz-svg-wrapper">
-            <svg viewBox="0 0 920 380" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="svg-title svg-desc">
+            <svg viewBox="0 0 1160 390" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="svg-title svg-desc">
               <title id="svg-title">Alternative Transcription Start Site Trajectories in Non-cancer vs Cancer</title>
-              <desc id="svg-desc">Branching watercolor trajectories flowing from a genomic locus to distinct biological outcomes, illustrating resource consumption.</desc>
+              <desc id="svg-desc">Branching watercolor trajectories flowing from genomic start sites to distinct transcript fates, illustrating energy expenditure.</desc>
 
               <!-- Genomic Coordinate Baseline -->
               <g class="genomic-axis">
-                <line x1="60" y1="200" x2="860" y2="200" stroke="#495326" stroke-width="2" stroke-dasharray="2 3" opacity="0.45" />
-                <line x1="60" y1="190" x2="60" y2="210" stroke="#495326" stroke-width="1.5" />
-                <line x1="860" y1="190" x2="860" y2="210" stroke="#495326" stroke-width="1.5" />
-                <text x="60" y="228" fill="#76745A" font-family="Georgia" font-size="11" letter-spacing="0.04em">5' GENOMIC LOCUS</text>
-                <text x="800" y="228" fill="#76745A" font-family="Georgia" font-size="11" letter-spacing="0.04em">3' EXONIC REGION</text>
+                <line x1="60" y1="210" x2="800" y2="210" stroke="#495326" stroke-width="2" stroke-dasharray="2 3" opacity="0.45" />
+                <line x1="60" y1="200" x2="60" y2="220" stroke="#495326" stroke-width="1.5" />
+                <line x1="800" y1="200" x2="800" y2="220" stroke="#495326" stroke-width="1.5" />
+                <text x="60" y="238" fill="#76745A" font-family="Georgia" font-size="12" letter-spacing="0.04em">5'</text>
+                <text x="800" y="238" fill="#76745A" font-family="Georgia" font-size="12" letter-spacing="0.04em" text-anchor="end">START CODON</text>
               </g>
 
-              <!-- Start Sites / Transcription Inception Ticks -->
+              <!-- Start Sites / Transcription Inception Ticks (Equal font thickness across all three) -->
               <g class="tss-promoters">
-                <!-- TSS 1 (Canonical / Upstream) -->
+                <!-- TSS 1: Distal -->
                 <g class="tss-interactive-node" data-tss="tss-1">
-                  <line x1="180" y1="170" x2="180" y2="230" stroke="#495326" stroke-width="2" />
-                  <circle cx="180" cy="200" r="5" fill="#495326" />
-                  <text x="165" y="156" fill="#495326" font-family="Didot, serif" font-size="14" font-weight="bold">TSS 1</text>
-                  <text x="150" y="250" fill="#8C8D8F" font-family="Georgia" font-size="11" font-style="italic">Canonical</text>
+                  <line x1="160" y1="180" x2="160" y2="240" stroke="#495326" stroke-width="1.75" />
+                  <circle cx="160" cy="210" r="5" fill="#495326" />
+                  <text x="160" y="166" fill="#495326" font-family="Didot, serif" font-size="14" font-weight="normal" text-anchor="middle">TSS 1</text>
+                  <text x="160" y="258" fill="#76745A" font-family="Georgia" font-size="11.5" font-style="italic" text-anchor="middle">Distal</text>
                 </g>
 
-                <!-- TSS 2 (Alternative Physiological) -->
+                <!-- TSS 2: Canonical -->
                 <g class="tss-interactive-node" data-tss="tss-2">
-                  <line x1="310" y1="175" x2="310" y2="225" stroke="#495326" stroke-width="1.5" />
-                  <circle cx="310" cy="200" r="4.5" fill="#495326" />
-                  <text x="295" y="162" fill="#495326" font-family="Didot, serif" font-size="13">TSS 2</text>
-                  <text x="282" y="246" fill="#8C8D8F" font-family="Georgia" font-size="10.5" font-style="italic">Proximal</text>
+                  <line x1="320" y1="180" x2="320" y2="240" stroke="#495326" stroke-width="1.75" />
+                  <circle cx="320" cy="210" r="5" fill="#495326" />
+                  <text x="320" y="166" fill="#495326" font-family="Didot, serif" font-size="14" font-weight="normal" text-anchor="middle">TSS 2</text>
+                  <text x="320" y="258" fill="#76745A" font-family="Georgia" font-size="11.5" font-style="italic" text-anchor="middle">Canonical</text>
                 </g>
 
-                <!-- TSS 3 (Cryptic / Oncogenic) -->
+                <!-- TSS 3: Proximal -->
                 <g class="tss-interactive-node" data-tss="tss-3">
-                  <line x1="430" y1="170" x2="430" y2="230" stroke="#495326" stroke-width="2" />
-                  <circle cx="430" cy="200" r="5" fill="#495326" />
-                  <text x="415" y="156" fill="#495326" font-family="Didot, serif" font-size="14" font-weight="bold">TSS 3</text>
-                  <text x="400" y="250" fill="#F18D8D" font-family="Georgia" font-size="11" font-style="italic">Deregulated</text>
+                  <line x1="480" y1="180" x2="480" y2="240" stroke="#495326" stroke-width="1.75" />
+                  <circle cx="480" cy="210" r="5" fill="#495326" />
+                  <text x="480" y="166" fill="#495326" font-family="Didot, serif" font-size="14" font-weight="normal" text-anchor="middle">TSS 3</text>
+                  <text x="480" y="258" fill="#76745A" font-family="Georgia" font-size="11.5" font-style="italic" text-anchor="middle">Proximal</text>
                 </g>
               </g>
 
               <!-- Branching Translucent Trajectories (Watercolor Washes) -->
-              <!-- Group 1: Non-Cancer / Adaptive Trajectories (#3E85AB) -->
+              <!-- Group 1: Non-Cancer / Adaptive Trajectories (#3E85AB) - Exactly Two Transcripts -->
               <g class="trajectories-noncancer" filter="url(#watercolor-displacement)" style="mix-blend-mode: multiply;">
-                <!-- Primary Adaptive Path from TSS 1 -->
-                <path class="path-noncancer" d="M180 200 C 260 200, 360 85, 540 85 C 670 85, 740 75, 840 75" 
-                      stroke="#3E85AB" stroke-width="4.5" stroke-linecap="round" fill="none" opacity="0.75" />
-                <!-- Secondary Adaptive Path from TSS 2 -->
-                <path class="path-noncancer" d="M310 200 C 400 200, 480 125, 620 125 C 720 125, 770 115, 840 115" 
-                      stroke="#3E85AB" stroke-width="3.5" stroke-linecap="round" fill="none" opacity="0.65" />
+                <!-- 1. Canonical Transcript (Originating from TSS 2 Canonical) -->
+                <path class="path-noncancer" d="M320 210 C 420 210, 520 85, 660 85 L 800 85" 
+                      stroke="#3E85AB" stroke-width="4.5" stroke-linecap="round" fill="none" opacity="0.85" />
+                <!-- 2. Cell-type Specific Transcript (Originating from TSS 3 Proximal) -->
+                <path class="path-noncancer" d="M480 210 C 560 210, 630 145, 710 145 L 800 145" 
+                      stroke="#3E85AB" stroke-width="3.5" stroke-linecap="round" fill="none" opacity="0.8" />
               </g>
 
-              <!-- Group 2: Cancer / Futile Trajectories (#F18D8D) -->
-              <g class="trajectories-cancer" filter="url(#watercolor-displacement)" style="mix-blend-mode: multiply;">
-                <!-- Stochastic Divergence 1 from TSS 3 -->
-                <path class="path-cancer" d="M430 200 C 500 200, 560 280, 680 280 C 760 280, 800 295, 840 295" 
-                      stroke="#F18D8D" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.75" />
-                <!-- Futile Secondary Branching from TSS 3 -->
-                <path class="path-cancer" d="M430 200 C 510 200, 570 330, 690 330 C 770 330, 800 340, 840 340" 
-                      stroke="#F18D8D" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.65" />
-                <!-- Intermediate Stochastic Cross-drift -->
-                <path class="path-cancer" d="M310 200 C 440 200, 500 250, 640 250 C 730 250, 780 260, 840 260" 
-                      stroke="#F18D8D" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 4" fill="none" opacity="0.5" />
+              <!-- Group 2: Cancer Trajectories (#F18D8D) -->
+              <g class="trajectories-cancer" style="mix-blend-mode: multiply;">
+                <!-- 1. Dysregulated Transcript (From TSS 1 Distal) -->
+                <path class="path-cancer" filter="url(#watercolor-displacement)" 
+                      d="M160 210 C 280 210, 440 275, 640 275 L 800 275" 
+                      stroke="#F18D8D" stroke-width="4.5" stroke-linecap="round" fill="none" opacity="0.85" />
+
+                <!-- 2. Distal Futile Transcription with HEAVY WATER WASH -->
+                <!-- Heavy Water Wash: Layer 1 (Wide translucent bleed) -->
+                <path class="path-futile-heavy" filter="url(#heavy-watercolor-displacement)" 
+                      d="M160 210 C 260 210, 420 340, 620 340 L 800 340" 
+                      stroke="#F18D8D" stroke-width="14" stroke-linecap="round" fill="none" opacity="0.32" />
+                <!-- Heavy Water Wash: Layer 2 (Rich watercolor pigment wash) -->
+                <path class="path-futile-heavy" filter="url(#heavy-watercolor-displacement)" 
+                      d="M160 210 C 260 210, 420 340, 620 340 L 800 340" 
+                      stroke="#F18D8D" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.65" />
+                <!-- Heavy Water Wash: Layer 3 (Dense saturated core) -->
+                <path class="path-futile-heavy" 
+                      d="M160 210 C 260 210, 420 340, 620 340 L 800 340" 
+                      stroke="#DE6B6B" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.95" />
               </g>
 
-              <!-- Higher Entities (#F1A021) & Lower Entities (#8C8D8F) Nodes -->
+              <!-- Destination Nodes & Generous Labels (Starting at x=824, fully within 1160px canvas) -->
               <g class="entity-nodes">
-                <!-- Higher Entity Nodes (Adaptive High-Affinity / Essential Functions) -->
+                <!-- Non-Cancer 1: Canonical Transcript -->
                 <g class="node-higher">
-                  <circle cx="840" cy="75" r="7" fill="#F1A021" />
-                  <circle cx="840" cy="75" r="14" stroke="#F1A021" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.6" />
-                  <text x="858" y="79" fill="#495326" font-family="Georgia" font-size="12" font-weight="600">Adaptive Product (Higher Entity)</text>
+                  <circle cx="800" cy="85" r="6.5" fill="#F1A021" />
+                  <circle cx="800" cy="85" r="13" stroke="#F1A021" stroke-width="1.2" stroke-dasharray="2 2" opacity="0.6" />
+                  <text x="824" y="90" fill="#495326" font-family="Georgia" font-size="13" font-weight="600">Canonical Transcript</text>
                 </g>
 
+                <!-- Non-Cancer 2: Cell-type Specific -->
                 <g class="node-higher">
-                  <circle cx="840" cy="115" r="5" fill="#F1A021" opacity="0.85" />
-                  <text x="858" y="119" fill="#76745A" font-family="Georgia" font-size="11">Constitutive Transcript</text>
+                  <circle cx="800" cy="145" r="5.5" fill="#F1A021" opacity="0.9" />
+                  <text x="824" y="150" fill="#495326" font-family="Georgia" font-size="13" font-weight="600">Cell-type Specific</text>
                 </g>
 
-                <!-- Lower Entity Nodes (Futile / Deregulated Oncogenic Byproducts) -->
+                <!-- Cancer 1: Dysregulated Transcript -->
                 <g class="node-lower">
-                  <circle cx="840" cy="260" r="4.5" fill="#8C8D8F" />
-                  <text x="858" y="264" fill="#8C8D8F" font-family="Georgia" font-size="11">Stochastic Aberrant Isoform</text>
+                  <circle cx="800" cy="275" r="5.5" fill="#8C8D8F" />
+                  <text x="824" y="280" fill="#F18D8D" font-family="Georgia" font-size="13" font-weight="600">Dysregulated Transcript</text>
                 </g>
 
+                <!-- Cancer 2: Futile Transcription (Heavy Water Wash) -->
                 <g class="node-lower">
-                  <circle cx="840" cy="295" r="6" fill="#8C8D8F" />
-                  <circle cx="840" cy="295" r="12" stroke="#8C8D8F" stroke-width="1" stroke-dasharray="2 2" opacity="0.5" />
-                  <text x="858" y="299" fill="#F18D8D" font-family="Georgia" font-size="12" font-weight="600">Futile Transcription Drain</text>
-                </g>
-
-                <g class="node-lower">
-                  <circle cx="840" cy="340" r="4" fill="#8C8D8F" opacity="0.7" />
-                  <text x="858" y="344" fill="#8C8D8F" font-family="Georgia" font-size="11">Truncated Non-functional Product</text>
+                  <circle cx="800" cy="340" r="7" fill="#8C8D8F" />
+                  <circle cx="800" cy="340" r="15" stroke="#DE6B6B" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.75" />
+                  <text x="824" y="345" fill="#DE6B6B" font-family="Georgia" font-size="13" font-weight="600">Futile Transcription</text>
                 </g>
               </g>
             </svg>
